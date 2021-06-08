@@ -1,0 +1,13 @@
+ {% include "base.html.twig" %}
+        {% block body %}
+        {# templates/index.html.twig #}
+        <h1>Catégories</h1>
+        {% for produit in categories %}
+            <li>
+                <a href="../boutique/{{ produit.id }}">
+                    <img src="{{ asset(produit.visuel) }}"/>
+                    {{ produit.libelle }}
+                </a>
+            </li>
+        {% endfor %}
+        {% endblock %}

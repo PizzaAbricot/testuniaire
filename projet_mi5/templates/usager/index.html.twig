@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usager index{% endblock %}
+
+{% block body %}
+    <h1>Usager index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Prenom</th>
+                <th>Nom</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ usager.Prenom }}</td>
+                <td>{{ usager.Nom }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('usager_register') }}">Create new</a>
+{% endblock %}

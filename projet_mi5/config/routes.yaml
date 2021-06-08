@@ -1,0 +1,57 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+usager_home:
+    path: /usagerHome/
+    controller: App\Controller\UsagerController::index
+    
+usager_register:
+    path: /usagerRegister/
+    controller: App\Controller\UsagerController::new
+    
+home_page:      
+    path: /{_locale}
+    controller: App\Controller\DefaultController::index
+    requirements: 
+         _locale: '%app.supported_locales%'
+    defaults: 
+         _locale: 'fr'
+ 
+ 
+contact_page:
+ path: /{_locale}/contact_page/
+ controller: App\Controller\DefaultController::contact
+ requirements: 
+         _locale: '%app.supported_locales%'
+ defaults: 
+         _locale: 'fr'
+ 
+boutique_page:
+ path: /boutique/
+ controller: App\Controller\DefaultController::boutique
+
+ 
+rayon_page:
+ path: /boutique/{idCategorie}
+ controller: App\Controller\BoutiqueController::rayon
+ 
+panier_index:
+ path: /panier
+ controller: App\Controller\PanierController::index
+
+panier_ajouter:
+ path: /panier/ajouter/{idProduit}/{quantite}
+ controller: App\Controller\PanierController::ajouter
+ 
+panier_enlever:
+ path: /panier/enlever/{idProduit}/{quantite}
+ controller: App\Controller\PanierController::enlever
+ 
+panier_supprimer:
+ path: /panier/supprimer/{idProduit}
+ controller: App\Controller\PanierController::supprimer
+ 
+panier_vider:
+ path: /panier/vider
+ controller: App\Controller\PanierController::vider
